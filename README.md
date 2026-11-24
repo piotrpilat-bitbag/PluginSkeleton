@@ -23,6 +23,16 @@ For more information about the **Test Application** included in the skeleton, pl
 
 Run `composer create-project sylius/plugin-skeleton ProjectName`.
 
+### ⚠️ Symfony 8 Support
+
+If you're using **Symfony 8.x**, you need to set the Node.js version environment variable before initialization:
+
+```bash
+NODE_VERSION=24 make init
+```
+
+This is required because Sylius UI components require Node.js ^22.13.0 or >=24.0, and the default Node.js 20 will cause build failures.
+
 ### Traditional
 
 1. From the plugin skeleton root directory, run the following commands:
@@ -52,6 +62,7 @@ To be able to set up a plugin's database, remember to configure your database cr
 ### Docker
 
 1. Execute `make init` to initialize the container and install the dependencies.
+   - For **Symfony 8.x**: Use `NODE_VERSION=24 make init`
 
 2. Execute `make database-init` to create the database and run migrations.
 
